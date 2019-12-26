@@ -16,7 +16,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
     parser = OptionParser()
     #parser.add_option("-k", "--kafka-config", type="string", dest="kafka_config")
-    parser.add_option("-a", "--api_key", type="string", dest="api_key", default="LPYVPZOOVAKNISPQ5LW7IVUK37ZH4NNN")
+    parser.add_option("-a", "--api_key", type="string", dest="api_key")
     parser.add_option("-n", "--symbol", type="string", dest="symbol")
     parser.add_option("-s", "--start-timestamp", type="string", dest="start_timestamp")
     parser.add_option("-e", "--end-timestamp", type="string", dest="end_timestamp")

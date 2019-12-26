@@ -15,7 +15,7 @@ class TDAClient(BrokerAPI):
         query_url = f"https://api.tdameritrade.com/v1/marketdata/{symbol}/pricehistory?apikey={self.api_key}&periodType=day&frequencyType=minute&frequency={minute_frequency}&endDate={end_date}000&startDate={start_date}000"
         logging.info(query_url)
         r = requests.get(query_url)
-        print(r.text)
+        #print(r.text)
         print(r.json()['candles'][0])
         stock_record = r.json()['candles'][0]
 
