@@ -28,10 +28,6 @@ if __name__ == "__main__":
         parser.error('Broker API key not specified')
     if not options.symbol:
         parser.error('symbol not specified')
-    if not options.start_timestamp:
-        options.start_timestamp = datetime.timestamp(datetime.now())
-    if not options.end_timestamp:
-        options.end_timestamp = options.start_timestamp + 300
 
     # retrieve data
     price_data = get(broker_api_key=options.api_key,
