@@ -1,0 +1,25 @@
+connection:
+  kafka-host: 192.168.1.63
+  kafka-port: 9092
+  schema-registry-host: 192.168.1.63
+  schema-registry-port: 8081
+topic: "stock-price-data"
+value-schema:
+  namespace: "stocks.pricedata"
+  name: "value"
+  type: "record"
+  fields: 
+    - name: "stock"
+      type: "string"
+    - name: "open"
+      type: "double"
+    - name: "high"
+      type: "double"
+    - name: "low"
+      type: "double"
+    - name: "close"
+      type: "double"
+    - name: "volume"
+      type: "long"
+    - name: "stimestamp"
+      type: "long"
