@@ -32,3 +32,4 @@ class TDAClient(BrokerAPI):
 
         elapsed = time.perf_counter() - s
         logging.info(f"Got {len(candles)} price history data points for {symbol} at {minute_frequency} minute interval {__file__} in {elapsed:0.2f} seconds.")
+        return candles
