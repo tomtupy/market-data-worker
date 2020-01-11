@@ -12,6 +12,7 @@ if __name__ == "__main__":
     import json
     import logging
     from datetime import datetime
+    from time import sleep
 
     logging.basicConfig(level=logging.DEBUG)
     parser = OptionParser()
@@ -71,8 +72,8 @@ if __name__ == "__main__":
             avroProducer.produce(topic=config['topic'], value=stock_record)
 
             # debug - flish after every record
-            # avroProducer.flush()
-            # print("sent")
-            # sleep(15)
+            avroProducer.flush()
+            print("sent")
+            sleep(1)
 
         avroProducer.flush()
