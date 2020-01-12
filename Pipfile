@@ -11,6 +11,8 @@ pytest="*"
 pyyaml="*"
 confluent_kafka = "*"
 avro-python3 = "*"
+boto3 = "*"
+alpaca_trade_api = "*"
 
 [requires]
 python_version = "3.7"

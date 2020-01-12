@@ -12,8 +12,7 @@ class TDAClient(BrokerAPI):
 
     def get_price_history(self, symbol, start_date, end_date, minute_frequency):
         s = time.perf_counter()
-        query_url = f"https://api.tdameritrade.com/v1/marketdata/{symbol}/pricehistory?apikey={self.api_key}&periodType=day&frequencyType=minute&frequency={minute_frequency}"
-        #&endDate={end_date}000&startDate={start_date}000"
+        query_url = f"https://api.tdameritrade.com/v1/marketdata/{symbol}/pricehistory?apikey={self.api_key}&periodType=day&frequencyType=minute&frequency={minute_frequency}&endDate={end_date}000&startDate={start_date}000"
         logging.info(query_url)
         r = requests.get(query_url)
         #print(r.text)
@@ -33,3 +32,10 @@ class TDAClient(BrokerAPI):
         elapsed = time.perf_counter() - s
         logging.info(f"Got {len(candles)} price history data points for {symbol} at {minute_frequency} minute interval {__file__} in {elapsed:0.2f} seconds.")
         return candles
+
+    def get_market_hours(self, date):
+        query_url = f"https://api.tdameritrade.com/v1/marketdata/hours?apikey={self.api_key}&markets=EQUITY,OPTION,BOND&date={date}"
+        logging.info(query_url)
+
+        r = requests.get(query_url)
+        return r.json()

@@ -28,3 +28,4 @@ ADD lib /lib
 
 ADD kafka-config.yml /kafka-config.yml
 ADD price_history.py /price_history.py
+ADD worker.py /worker.py
